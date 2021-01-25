@@ -8,12 +8,11 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class UserDaoJDBCImpl implements UserDao {
-    Connection connection;
+    private Connection connection;
 
     public UserDaoJDBCImpl() {
-        Util util = new Util();
         try {
-            connection = util.getConnection();
+            connection = Util.getConnection();
             System.out.println("Соединение с базой данных установлено");
         } catch (SQLException throwables) {
             System.out.println("Что-то с соединением");
